@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body  ng-app>
+    <h3>AngularJS expressions</h3>
+    <div>
+        <p>My first expression: {{ 5 + 5}}</p>
+    </div>
+    <p>AngularJS resolves the expression and returns the result.</p>
+
+    <p>The background color of the input box will be whatever you write in the input field.</p>
+    <h3>AngularJS Numbers</h3>
+    <div ng-init="quantity=1; cost=5">
+        <p>Total in dollar: {{quantity * cost}}</p>
+    </div>
+   
+    <div ng-init="quantity1=5;cost1=10">
+        <p>Total in dollar: <span ng-bind="quantity1*cost1"></span></p>
+    </div>
+    <h3>AngularJS Strings</h3>
+    <div ng-init="firstName='John'; lastName='Doe'"> 
+        <p>The full name is: {{firstName + " " +lastName}}</p>
+    </div>
+    <h3>AngularJS Objects</h3>
+    <div ng-init="person={firstName: 'John',lastName:'Doe'}">
+        <p>The name is {{person.lastName}}</p>
+    </div>
+</body>
+</html>
