@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="myCtrl">
+        <h2>Mouse events</h>
+        <h3 ng-mousemove="count = count+1">Mouse Over Me!</h3>
+        <h2>{{count}}</h2>
+    </div>
+    <div ng-controller="MyCtrl">
+        <h3>ng-click directive</h3>
+        <button ng-click="count=count+1">Click Me!</button>
+        <p>{{count}}</p>
+    </div>
+    <div ng-controller="myCtrl1">
+        <h2>Toggle, True/ False</h2>
+        <button ng-click="myFunc()">Click Me!</button>
+        <div ng-show="showMe">
+            <h3>Menu:</h3>
+            <div>Pizza</div>
+            <div>Pasta</div>
+            <div>Noodles</div>
+
+        </div>
+
+    </div>
+    <script>
+        var app =angular.module('myApp',[]);
+        app.controller('myCtrl',function($scope){
+            $scope.count=0;
+        });
+        app.controller('MyCtrl',function($scope){
+            $scope.count=0;
+        });
+        app.controller('myCtrl1', function($scope) {
+            $scope.showMe = false;
+            $scope.myFunc = function() {
+                $scope.showMe = !$scope.showMe;
+            }
+        });
+    </script>
+</body>
+</html>
