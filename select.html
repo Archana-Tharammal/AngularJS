@@ -6,7 +6,7 @@
     <title>Document</title><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 </head>
 <body ng-app="myApp">
-    <div ng-controller="MyCtrl">
+    <div ng-controller="MyCtrl1">
         <select ng-model="selectedName" ng-options="x for x in names"></select>
     </div>
     <div ng-controller="myCtrl">
@@ -20,9 +20,23 @@
         <h1>You selected: {{selectedCar.model}}</h1>
         <p> Its color is: {{ selectedCar.color}}</p>
     </div>
+    <div ng-controller="MyCtrl">
+        <p>Select a car:</p>
+        <select ng-model="selectedcar" ng-options="x for (x,y) in cars"></select>
+        <h1>You selected:{{selectedcar}}</h1>
+    </div>
+    <p>This example demonstrates the use of an object as the data source when creating a dropdown list.</p>
     <script>
-        var app = angular.module('myApp', []);
-        app.controller('MyCtrl', function($scope) {
+        var app=angular.module("myApp",[]);
+        app.controller('MyCtrl',function($scope){
+            $scope.cars={
+                car01 :"Ford",
+                car02 :"Fiat",
+                car03 :"Volvo"
+            }
+        });
+    
+        app.controller('MyCtrl1', function($scope) {
             $scope.names = ["Emil", "Tobias", "Linus"];
         });
         app.controller('myCtrl', function($scope) {
