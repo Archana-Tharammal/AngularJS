@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>  
+    
+</head>
+<style>
+    input.ng-invalid {
+        background-color:rgb(21, 224, 197);
+    }
+    input.ng-valid {
+        background-color:rgb(218, 195, 218);
+    }
+    form.ng-pristine {
+        background-color: rgb(3, 65, 86);
+    }
+    form.ng-dirty {
+        background-color: rgb(58, 1, 57);
+    }
+    </style>
+<body ng-app="">
+    <h3>Form validation</h3>
+    <form name="myForm">
+        <input name="myInput" ng-model="myInput" required>
+    </form>
+    <p>The input's valid state is:</p>
+    <h1>{{myForm.myInput.$valid}}</h1>
+    <h3>Email:</h3>
+    <form name="myForm1">
+        <input type="email" name="myInput1" ng-model="myInput1">
+        </form>
+        <p>The input's valid state is:</p>
+        <h1>{{myForm1.myInput1.$valid}}</h1>
+        <p>Note that the state of the input field is "true" before you start writing in it, even if it does not contain an e-mail address.</p>
+        <form name="myForm2">
+            <input name="myName1" ng-model="myName1" required>
+            </form>
+</body>
+</html>
